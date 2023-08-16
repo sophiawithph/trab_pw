@@ -2,55 +2,61 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
-    public function index() {
-        $users = Usuario::all();
-        return view('usuarios.index', [
-            'users' => $users,
-        ]);}
-
-public function add(Request $request) {
-    if ($request->isMethod('POST')) {
-        $usr = $request->validate([
-            'name' => 'string|required',
-            'email' => 'email|required',
-            'password' => 'string|required',
-        ]);
-    $usr['password']= Hash::make($usr['password']);
-        $user = Usuario::create($usr);
-
-        event(new Registered($user));
-
-        return redirect()->route('usuarios');
+    public function index()
+    {
+        return view('users.cadastrar');
     }
 
-
-    return view('usuarios.add');
-}
-
-public function login(Request $request){
-    // return view('usuarios.login');
-    //se for post, tentar logar
-    if($request->isMethod('POST')){
-        $data = $request->validate([
-            'email' => 'required',
-            'password' => 'required',
+    public function cadastrar(Request $form)
+    {
+        $dados = $form->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'password' => 'required|string'
         ]);
 
-        if (Auth::attempt($data)){
-            return redirect()->intended(route('home'));
-        }else{
-            return redirect()->route('login')->with('erro', 'Deu ruim!');
+        $dados['password'] = Hash::make($dados['password']);
+
+        Usuario::create($dados);
+        return redirect()->route('usuarios.listAll')->with('sucesso', 'Usuário inserido com sucesso');
+    }
+
+    public function listAll()
+    {
+        $users = Usuario::all();
+        return view('users.listAll', ['users' => $users]);
+    }
+
+    public function login(Request $request)
+    {
+        if ($request->isMethod("POST")) {
+            $data = $request->validate([
+                'email' => 'required',
+                'password' => 'required',
+            ]);
+
+            if (Auth::attempt($data)) {
+                return redirect()->route('home');
+            } else {
+                return redirect()->route('login')->with('erro', 'Deu Ruim!');
+            }
+
         }
 
+        return view('users.login');
     }
-    return view('usuarios.login');
-}
-public function logout(){
-    Auth::logout();
-    return redirect()->route('home');
-}
+
+    public function logout(){
+        Auth::logout();
+
+        return redirect()->route('home');
+    }
+
 }
