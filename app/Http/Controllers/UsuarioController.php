@@ -43,7 +43,7 @@ class UsuarioController extends Controller
             ]);
 
             if (Auth::attempt($data)) {
-                return redirect()->route('home');
+                return redirect()->route('movies.listAll');
             } else {
                 return redirect()->route('login')->with('erro', 'Deu Ruim!');
             }
@@ -56,7 +56,7 @@ class UsuarioController extends Controller
     public function logout(){
         Auth::logout();
 
-        return redirect()->route('home');
+        return redirect()->route('movies.listAll');
     }
 
 }

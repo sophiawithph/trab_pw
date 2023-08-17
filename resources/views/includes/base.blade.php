@@ -10,30 +10,17 @@
 </head>
 
 <body>
-
-    <h1>Site lindão</h1>
-
-    @if (Auth::user())
+    <div class="header">
+        @if (Auth::user())
         Olá {{ Auth::user()->name }}
-        <br>
         <a href="{{ route('logout') }}">Logout</a>
-        <br>
         <a href="{{ route('movies.create') }}">Criar Filme</a>
-    @else
+        @else
         <a href="{{ route('login') }}">Fazer Login</a>
-    @endif
+        @endif
 
-    <ul>
-        <li>
-            <a href="{{ route('home') }}">Home</a>
-        </li>
-
-        <li>
-            <a href="{{ route('movies.listAll') }}">Filmes</a>
-        </li>
-    </ul>
-    <br>
-    <hr>
+        <a href="{{ route('movies.listAll') }}">Filmes</a>
+    </div>
     @yield('content')
 </body>
 

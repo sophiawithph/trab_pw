@@ -1,0 +1,85 @@
+.header {
+    padding: 15px;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+ a {
+    background-color: aliceblue;
+    padding: 10px;
+    border-radius: 10px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+}
+
+a:hover {
+    background-color: rgb(209, 209, 209);
+}
+
+
+
+.movies-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.movie-item {
+    flex-basis: calc(25% - 20px);
+    /* Para 4 filmes por linha com espaçamento entre eles */
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.movie-item a {
+    padding: 10px;
+    background-color: aliceblue;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.movie-item a:hover {
+    background-color: rgb(209, 209, 209);
+    padding: 10px;
+    border-radius: 10px;
+    width: 100px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.movie-item img {
+    max-width: 100%;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.container-movie{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movie-c {
+    width: 30%;
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+}
+
+.movie-c img {
+    border-radius: 10px;
+}

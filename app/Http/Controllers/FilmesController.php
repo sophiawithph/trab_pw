@@ -25,7 +25,7 @@ class FilmesController extends Controller
         $request->file('image')->store('images', 'public');
 
         Filme::create($data);
-        return redirect()->route('home')->with('sucesso', 'Usuário inserido com sucesso');
+        return redirect()->route('movies.listAll')->with('sucesso', 'Usuário inserido com sucesso');
 
     }
 
