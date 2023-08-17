@@ -45,7 +45,7 @@ class UsuarioController extends Controller
             if (Auth::attempt($data)) {
                 return redirect()->route('movies.listAll');
             } else {
-                return redirect()->route('login')->with('erro', 'Deu Ruim!');
+                return redirect()->route('login')->with('erro', 'Email ou Senha Incorretos');
             }
 
         }

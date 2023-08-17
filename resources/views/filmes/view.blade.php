@@ -10,7 +10,7 @@
         <img src="{{ asset('storage/' . $filme->image) }}" alt="Movie Image">
         <p>{{ $filme->sinopse }}</p>
         <p>{{ $filme->ano }}</p>
-        <a href="{{ $filme->trailer }}">Trailer</a>
+        <iframe width="560" height="315" src="{{ $filme->getEmbed() }}" frameborder="0" allowfullscreen></iframe>
         <p>
             <a href="{{ route('movies.listAll') }}">Voltar</a>
         </p>

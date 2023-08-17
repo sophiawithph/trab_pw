@@ -40,7 +40,7 @@ use Illuminate\Support\Facades\DB;
                 'ano' => 2014,
                 'categoria' => 'Terror',
                 'sinopse' => 'John Form acha que encontrou o presente ideal para sua esposa grávida, uma boneca vintage. No entanto, a alegria do casal não dura muito. Uma noite terrível, membros de uma seita satânica invadem a casa do casal em um ataque violento. Ao tentarem invocar um demônio, eles mancham a boneca de sangue, tornando-a receptora de uma entidade do mal.',
-                'image' =>'image/anabelle.jpeg',
+                'image' =>'images/anabelle.jpeg',
                 'trailer' => 'https://youtu.be/kHl6aU30pIo',
             ],
             [
