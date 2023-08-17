@@ -14,6 +14,7 @@ class Filme extends Model
         'sinopse',
         'ano',
         'trailer',
-        'image'
+        'image',
+        'categoria'
     ];
 }

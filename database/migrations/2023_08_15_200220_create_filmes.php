@@ -15,10 +15,11 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string("name");
-            $table->string("sinopse");
+            $table->string("sinopse", 1000);
             $table->integer("ano");
             $table->string("trailer");
             $table->string("image");
+            $table->string("categoria");
         });
     }
 

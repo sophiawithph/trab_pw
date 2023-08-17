@@ -10,6 +10,13 @@
         <label for="name">Nome do Filme</label>
         <input type="text" name="name">
         <br>
+        <label for="categoria">Categoria</label>
+        <select id="categoria" name="categoria">
+            <option value="acao">Ação</option>
+            <option value="terror">Terror</option>
+            <option value="comedia">Comédia</option>
+        </select>
+        <br>
         <label for="sinopse">Sinopse</label>
         <input type="text" name="sinopse">
         <br>

@@ -29,3 +29,6 @@ Route::prefix('/usuarios')->group(function () {
     Route::get('/createMovie', [FilmesController::class, 'index'])->name('movies.index');
     Route::post('/createMovie', [FilmesController::class, 'create'])->name('movies.create');
 })->middleware('auth');
+
+Route::get('/listMovies', [FilmesController::class, 'listAll'])->name('movies.listAll');
+Route::get('/listMovie/{movieId}', [FilmesController::class, 'listMovie'])->name('movies.listMovie');
