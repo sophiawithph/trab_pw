@@ -18,6 +18,13 @@ class UsuarioSeeder extends Seeder
             'name'=>'Admin',
             'password'=> Hash::make('123'),
             'email'=>'admin@admin.com',
+            'isAdmin'=> 1,
+        ],
+         [
+            'name'=>'Usuario',
+            'password'=> Hash::make('123'),
+            'email'=>'usuario@usuario.com',
+            'isAdmin'=> 0,
          ]);
     }
 }
