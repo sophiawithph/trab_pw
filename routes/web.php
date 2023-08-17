@@ -32,3 +32,11 @@ Route::prefix('/usuarios')->group(function () {
 
 Route::get('/listMovies', [FilmesController::class, 'listAll'])->name('movies.listAll');
 Route::get('/listMovie/{movieId}', [FilmesController::class, 'listMovie'])->name('movies.listMovie');
+
+Route::get('/edit/{id}', [FilmesController::class, 'edit'])->name('movies.edit');
+Route::post('/edit/{id}', [FilmesController::class, 'editSave'])->name('movies.editSave');
+
+Route::get('/remove/{id}', [FilmesController::class, 'remove'])->name('movies.remove');
+Route::delete('/remove/{id}', [FilmesController::class, 'removeForReal'])->name('movies.removeForReal');
+
+Route::post('/filter', [FilmesController::class, 'filter'])->name('movies.filter');

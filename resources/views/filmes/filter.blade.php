@@ -2,9 +2,7 @@
 
 @section('title', 'Filmes')
 
-@if (session('sucesso'))
-    <div>{{ session('sucesso') }}</div>
-@endif
+
 
 @section('content')
     <h3>Listagem de Filmes</h3>
@@ -12,6 +10,7 @@
         @csrf
         <label for="filtro_ano">Filtrar por ano:</label>
         <input type="number" id="filtro_ano" name="filtro_ano">
+        <label for="filtro_categoria">Filtrar por categoria:</label>
         <select id="filtro_categoria" name="filtro_categoria">
             <option value="acao">Ação</option>
             <option value="terror">Terror</option>
