@@ -7,19 +7,24 @@
 @endif
 
 @section('content')
-<h3>Listagem de Filmes</h3>
-<form action="{{ route('movies.filter') }}" method="POST">
+<div style="left:50%">
+<div class="search">
+    <h2>Listagem de Filmes</h2>
+    <form action="{{ route('movies.filter') }}" method="POST">
     @csrf
-    <label for="filtro_ano">Filtrar por ano:</label>
-    <input type="number" id="filtro_ano" name="filtro_ano">
+    <!-- <label for="filtro_ano">Filtrar por ano:</label> -->
+    <input type="number" id="filtro_ano" name="filtro_ano" placeholder="Filtrar por ano:">
     <select id="filtro_categoria" name="filtro_categoria">
         <option value="acao">Ação</option>
         <option value="terror">Terror</option>
         <option value="comedia">Comédia</option>
     </select>
-    <button type="submit">Filtrar</button>
+    <br><br>
+    <button type="submit" style="border: 1px;; color:purple; border-radius: 15px; padding: 7px">Filtrar🔎</button>
 </form>
-
+</div>
+</div>
+<br>
 <div class="movies-gallery">
     @foreach ($movies as $movie)
     <div class="movie-item">

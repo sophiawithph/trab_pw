@@ -7,7 +7,7 @@
 }
 
  a {
-    background-color: aliceblue;
+    /* background-color: aliceblue; */
     padding: 10px;
     border-radius: 10px;
     width: 100px;
@@ -36,6 +36,7 @@ a:hover {
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
+
 }
 
 .movie-item a {
@@ -71,7 +72,7 @@ a:hover {
 
 .movie-c {
     width: 30%;
-    background-color: rgb(230, 230, 230);
+    /* background-color: rgb(230, 230, 230); */
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -82,4 +83,96 @@ a:hover {
 
 .movie-c img {
     border-radius: 10px;
+}
+.search{
+    width: 30%;
+    /* background-color: rgb(230, 230, 230); */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    transform: translate(115%, 30%);
+}
+.barra {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+  }
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.movie-form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+ .form-edit{
+    width: 300px;
+  margin: 0 auto;
+  padding: 50px;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+ }
+.label-edit{
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+input[type="text"],
+input[type="number"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+button-edit{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
 }

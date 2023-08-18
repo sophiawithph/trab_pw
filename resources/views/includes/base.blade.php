@@ -8,20 +8,27 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <title>@yield('title')</title>
 </head>
-
+ <div class="barra"> 
 <body>
-    <div class="header">
-        @if (Auth::user())
-        Olá {{ Auth::user()->name }}
-        <a href="{{ route('logout') }}">Logout</a>
-        <a href="{{ route('movies.create') }}">Criar Filme</a>
-        @else
-        <a href="{{ route('login') }}">Fazer Login</a>
-        @endif
 
-        <a href="{{ route('movies.listAll') }}">Filmes</a>
+    <div class="header">
+        <div style="color:white; padding: 10px;">
+            @if (Auth::user())
+            Olá {{ Auth::user()->name }}
+        </div>
+        <a  href="{{ route('logout') }}">Logout</a>
+        <a  href="{{ route('movies.create') }}">Criar Filme</a>
+        @else
+        <a  href="{{ route('login') }}">Fazer Login</a>
+        @endif
+        <a  href="{{ route('movies.listAll') }}">Filmes</a>
+        </div>
     </div>
+    </div>
+    <div>
+        <br><br>
     @yield('content')
+    </div>
 </body>
 
 </html>
