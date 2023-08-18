@@ -28,12 +28,6 @@ class UsuarioController extends Controller
         return redirect()->route('usuarios.listAll')->with('sucesso', 'Usuário inserido com sucesso');
     }
 
-    public function listAll()
-    {
-        $users = Usuario::all();
-        return view('users.listAll', ['users' => $users]);
-    }
-
     public function login(Request $request)
     {
         if ($request->isMethod("POST")) {
@@ -47,16 +41,15 @@ class UsuarioController extends Controller
             } else {
                 return redirect()->route('login')->with('erro', 'Email ou Senha Incorretos');
             }
-
         }
 
         return view('users.login');
     }
 
-    public function logout(){
+    public function logout()
+    {
         Auth::logout();
 
         return redirect()->route('movies.listAll');
     }
-
 }

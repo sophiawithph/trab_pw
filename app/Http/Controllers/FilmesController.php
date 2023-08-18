@@ -12,7 +12,8 @@ class FilmesController extends Controller
         return view('filmes.cadastrar');
     }
 
-    function listAll(){
+    function listAll()
+    {
         $movies = Filme::all();
         return view('filmes.listAll', ['movies' => $movies]);
     }
@@ -25,21 +26,23 @@ class FilmesController extends Controller
         $request->file('image')->store('images', 'public');
 
         Filme::create($data);
-        return redirect()->route('movies.listAll')->with('sucesso', 'Usuário inserido com sucesso');
-
+        return redirect()->route('movies.listAll')->with('sucesso', 'Filme inserido com sucesso');
     }
 
-    function listMovie($id){
+    function listMovie($id)
+    {
         $filme = Filme::find($id);
         return view('filmes/view', ["filme" => $filme]);
     }
 
-    function edit($id){
+    function edit($id)
+    {
         $filme = Filme::find($id);
         return view('filmes/edit', ["filme" => $filme]);
     }
 
-    function editSave(Request $request, Filme $filme){
+    function editSave(Request $request, Filme $filme)
+    {
         $imgPath =  $request->file('image')->store('images', 'public');
         $filme->fill(["name" => $request['name'], "sinopse" => $request['sinopse'], "ano" => $request['ano'], "trailer" => $request['trailer'], 'image' => $imgPath, 'categoria' => $request['categoria']]);
         $request->file('image')->store('images', 'public');
@@ -65,7 +68,8 @@ class FilmesController extends Controller
         return redirect()->route('movies.listAll')->with('sucesso', 'Filme apagado com sucesso');
     }
 
-    public function filter(Request $request){
+    public function filter(Request $request)
+    {
         $filtroAno = $request->input('filtro_ano');
         $filtroCategoria = $request->input('filtro_categoria');
 

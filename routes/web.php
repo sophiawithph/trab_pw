@@ -22,7 +22,6 @@ Route::get('/', function () {
 Route::prefix('/usuarios')->group(function () {
     Route::get('/cadastrar', [UsuarioController::class, 'index'])->name('usuarios.index');
     Route::post('/cadastrar', [UsuarioController::class, 'cadastrar'])->name('usuarios.cadastrar');
-    Route::get('/usuarios', [UsuarioController::class, 'listAll'])->name('usuarios.listAll');
     Route::get('/login', [UsuarioController::class, 'login'])->name('login');
     Route::post('/login', [UsuarioController::class, 'login'])->name('login');
     Route::get('/logout', [UsuarioController::class, 'logout'])->name('logout');
